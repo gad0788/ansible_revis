@@ -1,0 +1,61 @@
+---
+- hosts: all
+  become: 1
+  gather_facts: 1
+  ignore_errors: 1
+  vars_files:
+    - variables.yml
+  tasks: 
+    - name: Instal nginx on Debian family
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+      when: ansible_os_family=="Debian"
+    - name: Install httpd on amazon linux as Rehat family
+      yum:
+        name: httpd
+        state: present
+      when: ansible_os_family=="RedHat"
+    - name: Creating groups
+      group: 
+        name: "{{group}}"
+        state: present
+      tags:
+        - g
+    - name: Creating user
+      user:
+        name: "{{user}}"
+        state: present
+      tags:
+        - u
+    - name: Starting ngix demoen
+      service:
+        name: nginx
+        state: started
+      when: ansible_os_family=="Debian"
+    - name: Starting httpd demoen 
+      service: 
+        name: httpd
+        state: started
+        enabled: yes
+      when: ansible_os_family=="RedHat"
+    - name: Creating index file
+      file:
+        path: /var/www/html/index.html
+        state: touch
+    - name: Copying content into index file
+      copy:
+        dest: /var/www/html/index.html
+        content: <h1> This is deployed by ansible and written by DevOps_Gad </h1>
+      register: file_output
+    - name: Read Data
+      debug:
+        var: file_output.diff.after.path
+    - name: Creating directory
+      file:
+        path: /tmp/os
+        state: directory
+      tags: 
+        - d
+        

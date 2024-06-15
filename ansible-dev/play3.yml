@@ -1,0 +1,14 @@
+---
+- hosts: ws
+  become: 1
+  gather_facts: 1
+  ignore_errors: 1
+  tasks:
+    - name: Install packages
+      yum:
+        name: ["wget","finger","docker"]
+    - name: Start docker doemon
+      service:
+        name: docker
+        state: started
+        enabled: yes  

@@ -1,0 +1,86 @@
+2024-06-13 17:35:49,134 p=3491 u=ec2-user n=ansible | 172.31.24.235 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-06-13 17:35:50,985 p=3491 u=ec2-user n=ansible | 172.31.35.145 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.7"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-06-13 17:48:19,757 p=4513 u=ec2-user n=ansible | 172.31.35.145 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.7"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-06-13 17:48:19,899 p=4513 u=ec2-user n=ansible | 172.31.24.235 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-06-13 17:52:04,540 p=4719 u=ec2-user n=ansible | 172.31.35.145 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.7"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-06-13 17:54:04,899 p=4844 u=ec2-user n=ansible | 172.31.24.235 | CHANGED | rc=0 >>
+Thu Jun 13 17:54:04 UTC 2024
+
+2024-06-13 17:54:19,554 p=4957 u=ec2-user n=ansible | 172.31.24.235 | CHANGED | rc=0 >>
+Thu Jun 13 17:54:19 UTC 2024
+
+2024-06-13 17:54:19,611 p=4957 u=ec2-user n=ansible | 172.31.35.145 | CHANGED | rc=0 >>
+Thu Jun 13 17:54:19 UTC 2024
+
+2024-06-13 17:54:46,330 p=5197 u=ec2-user n=ansible | 172.31.24.235 | CHANGED | rc=0 >>
+              total        used        free      shared  buff/cache   available
+Mem:            929         157         119           0         652         699
+Swap:             0           0           0
+
+2024-06-13 17:54:46,436 p=5197 u=ec2-user n=ansible | 172.31.35.145 | CHANGED | rc=0 >>
+              total        used        free      shared  buff/cache   available
+Mem:            944          84         338           0         521         721
+Swap:             0           0           0
+
+2024-06-13 17:56:05,075 p=5452 u=ec2-user n=ansible | 172.31.35.145 | CHANGED | rc=0 >>
+4.14.345-262.561.amzn2.x86_64
+
+2024-06-13 17:56:13,061 p=5553 u=ec2-user n=ansible | 172.31.35.145 | CHANGED | rc=0 >>
+4.14.345-262.561.amzn2.x86_64
+
+2024-06-13 17:57:32,016 p=5782 u=ec2-user n=ansible | 172.31.24.235 | CHANGED | rc=0 >>
+NAME="Ubuntu"
+VERSION="18.04.6 LTS (Bionic Beaver)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 18.04.6 LTS"
+VERSION_ID="18.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=bionic
+UBUNTU_CODENAME=bionic
+
+2024-06-13 17:57:42,501 p=5900 u=ec2-user n=ansible | 172.31.35.145 | CHANGED | rc=0 >>
+NAME="Amazon Linux"
+VERSION="2"
+ID="amzn"
+ID_LIKE="centos rhel fedora"
+VERSION_ID="2"
+PRETTY_NAME="Amazon Linux 2"
+ANSI_COLOR="0;33"
+CPE_NAME="cpe:2.3:o:amazon:amazon_linux:2"
+HOME_URL="https://amazonlinux.com/"
+SUPPORT_END="2025-06-30"
+

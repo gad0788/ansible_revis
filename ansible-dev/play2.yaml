@@ -1,0 +1,30 @@
+---
+- hosts: ws
+  become: 1
+  gather_facts: 1
+  ignore_errors: 1
+
+  vars: 
+     user_name: victor
+     group: icare_devops
+  
+  tasks: 
+    - name: check server uptime
+      command: uptime
+      register: car
+    - name: Read Data
+      debug:
+        var: car.stdout
+    - name: list directory
+      shell: ls
+    - name: Check the kernel version
+      command: uname -r
+    - name: Create group account
+      group:
+        name: "{{group}}"
+        state: present
+    - name: Create user acounts
+      user:
+        name: "{{user_name}}"
+        state: present
+    

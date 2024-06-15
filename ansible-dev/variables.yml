@@ -1,0 +1,3 @@
+group: developers_team
+user: kayla
+kernel_version: uname -r

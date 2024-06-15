@@ -1,0 +1,20 @@
+---
+- hosts: db
+  become: 1
+  gather_facts: 1
+  ignore_errors: 1
+  vars_files:
+    - variables.yml
+  tasks:
+      - name: Check kernel version
+        command: "{{kernel_version}}"
+        register: k
+      - name: Read data
+        debug:
+          var: k.stdout
+      - name: Creating students file
+        file:
+          path: /tmp/os
+          state: touch
+        tags:
+          - a
