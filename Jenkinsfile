@@ -6,6 +6,7 @@ pipeline{
                 sh 'zip ansible-${BUILD_ID}.zip *--excule Jenkinsfile'
                 sh 'ls -l'
             }
+            
         }
         stage('uploading artifacts to jfrog'){
             steps{
