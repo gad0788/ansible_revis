@@ -15,7 +15,10 @@ pipeline{
         }
         stage('publish to ansible server'){
             steps{
-                sh 'sshPublisher(publishers: [sshPublisherDesc(configName: 'ansibleServer', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'ls', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: 'ansible-${BUILD_ID}.zip', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])'
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'ansibleServer', transfers: [sshTransfer(cleanRemote: false, \
+                excludes: '', execCommand: 'ls', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, \
+                patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: 'ansible-${BUILD_ID}.zip', sourceFiles: '')], \
+                usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
         }
         
