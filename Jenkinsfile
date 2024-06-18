@@ -3,6 +3,7 @@ pipeline{
     stages{
         stage('zip the file'){
             steps{
+                sh 'sh 'rm -rf *.zip || echo ""'' // run this or else the command
                 sh 'zip ansible-${BUILD_ID}.zip *--excule Jenkinsfile'
                 sh 'ls -l'
             }
