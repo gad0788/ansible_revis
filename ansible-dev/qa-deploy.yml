@@ -10,15 +10,7 @@
         state: absent
     - name: Checking and get the PID
       shell: lsof -t -i :8082
-      tags:
-        - a
-      register: pid_output
-    - name: Read the data
-      debug:
-       var: pid_output
-       tags:
-        - b
-       
+      register: pid_output  
     - name: Kill Rnning App
       shell: "kill -9{{ pid_output.stdout}}"
       when: pid_output.stdout != ''
