@@ -12,15 +12,15 @@
       shell: lsof -i :8082
       register: pid_output
     - name: Kill Rnning App
-      shell: "kill -9 pid_output.stdout"
+      shell: "kill -9{{ pid_output.stdout}}"
       when: pid_output.stdout != ''
       
     - name: Download New Artifact
       get_url: 
-      url: "http://ec2-100-24-242-8.compute-1.amazonaws.com:8081/artifactory/geolocation/bio_10.jar"
-      dest: /opt/qa/spg
-      url_username: admin
-      url_passwd: password
+        url: http://ec2-100-24-242-8.compute-1.amazonaws.com:8081/artifactory/geolocation/bio_10.jar
+        dest: /opt/qa/spg
+        url_username: admin
+        url_passwd: password
       
     - name: Run the App
       shell: nohup java -jar /opt/qa/spg/*.jar > /opt/qa/spg.log 2>&1 &
