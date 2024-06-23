@@ -23,5 +23,14 @@ pipeline{
                 usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
         }
+        stage('Runnin playbook'){
+            steps{
+                dir('/home/ec2-user/ansible-dev'){
+                sh 'ansible-playbook qa-play.yml'
+                }
+                
+                }
+            }
+        
     }
 }
