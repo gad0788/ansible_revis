@@ -13,7 +13,7 @@
       tags:
         - a
       register: pid_output
-    - name: print pid_output
+    - name: Read the data
       debug:
        var: pid_output
        tags:
